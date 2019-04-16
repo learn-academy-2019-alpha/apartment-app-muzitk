@@ -1,9 +1,6 @@
 class ApartmentsController < ApplicationController
-    before_action :authenticate_user!, only: :protected
-
-	def unprotected
-	end
-
-	def protected
-	end
-end
+    def index
+      apartments = Apartment.all
+      render json: apartments
+    end
+  end

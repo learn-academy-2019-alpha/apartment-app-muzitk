@@ -1,13 +1,24 @@
 import React from "react"
 import PropTypes from "prop-types"
-class AuthenticatedApp extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        <div>Authenthicated</div>
-      </React.Fragment>
-    );
-  }
-}
+import {
+   BrowserRouter as Router,
+   Route,
+   Switch, } from 'react-router-dom'
+import Apartments from './pages/Apartments'
 
-export default AuthenticatedApp
+ class AuthenticatedApp extends React.Component {
+   render () {
+     return (
+       <Router>
+         <div>
+           <Switch>
+             <Route path="/apartments" component={Apartments} />
+             <Apartments />
+           </Switch>
+         </div>
+       </Router>
+     );
+   }
+ }
+
+ export default AuthenticatedApp
