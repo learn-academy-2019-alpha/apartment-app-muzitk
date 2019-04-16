@@ -3,20 +3,27 @@ import PropTypes from "prop-types"
 import {
    BrowserRouter as Router,
    Route,
-   Switch, } from 'react-router-dom'
+   Switch,Link } from 'react-router-dom'
 import Apartments from './pages/Apartments'
+import NewApartment from './pages/newapartment'
+
+
 
  class AuthenticatedApp extends React.Component {
    render () {
      return (
        <Router>
          <div>
+         <Link to = "/newapartment" > New Apt </Link>
            <Switch>
              <Route path="/apartments" component={Apartments} />
-             <Apartments />
+             <Route path="/newapartment" component={NewApartment}/>
+            <Apartments />
+            <NewApartment />
            </Switch>
          </div>
        </Router>
+
      );
    }
  }
